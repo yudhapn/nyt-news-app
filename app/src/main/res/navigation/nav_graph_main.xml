@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/feeds_fragment">
+
+    <fragment
+        android:id="@+id/feeds_fragment"
+        android:name="id.ypran.kozziinews.ui.FeedsFragment"
+        android:label="fragment_feeds"
+        tools:layout="@layout/fragment_feeds">
+        <action
+            android:id="@+id/action_to_article_detail_fragment"
+            app:destination="@id/article_detail_fragment" />
+        <action
+            android:id="@+id/action_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/article_detail_fragment"
+        android:name="id.ypran.nytnews.ui.ArticleDetailFragment"
+        android:label="fragment_article_detail"
+        app:moduleName="nytnews">
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="id.ypran.search.ui.SearchFragment"
+        android:label="fragment_search"
+        app:moduleName="search">
+        <action
+            android:id="@+id/action_to_article_detail_fragment"
+            app:destination="@id/article_detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="id.ypran.favorite.ui.FavoriteFragment"
+        android:label="fragment_favorite"
+        app:moduleName="favorite">
+        <action
+            android:id="@+id/action_to_article_detail_fragment"
+            app:destination="@id/article_detail_fragment" />
+    </fragment>
+</navigation>

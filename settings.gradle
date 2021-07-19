@@ -1,0 +1,6 @@
+include ':search'
+include ':favorite'
+include ':nytnews'
+include ':core'
+include ':app'
+rootProject.name = "Kozzii News"
